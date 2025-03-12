@@ -1,2 +1,49 @@
 
 /* Your CSS Code here. */
+  body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .scene-1 {
+            width: 200px;
+            height: 200px;
+            perspective: 800px;
+        }
+
+        .cube-1 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 10s infinite linear;
+        }
+
+        .face {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 123, 255, 0.8);
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .front  { transform: translateZ(50px); background: #ff5733; }
+        .back   { transform: rotateY(180deg) translateZ(50px); background: #33ff57; }
+        .left   { transform: rotateY(-90deg) translateZ(50px); background: #3357ff; }
+        .right  { transform: rotateY(90deg) translateZ(50px); background: #f0db4f; }
+        .top    { transform: rotateX(90deg) translateZ(50px); background: #ff33bb; }
+        .bottom { transform: rotateX(-90deg) translateZ(50px); background: #33fff3; }
+
+        @keyframes rotateCube {
+            from { transform: rotateX(0deg) rotateY(0deg); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
+        }
